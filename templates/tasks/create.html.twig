@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <form action="/tasks" method="POST" class="p-2 max-w-xl">
+        {{ include('tasks/form.html.twig', {task: null}) }}
+    </form>
+{% endblock %}
+

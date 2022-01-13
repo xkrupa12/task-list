@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% if error %}
+        <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    <form action="{{ path('tasks.update', {id: task.id}) }}" method="POST" class="p-2 max-w-xl">
+        <input type="hidden" name="_method" value="PUT" />
+        {{ include('tasks/form.html.twig', {task: task}) }}
+    </form>
+{% endblock %}
+
